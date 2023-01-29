@@ -1,0 +1,47 @@
+File Handling : How we can read data from file and how we can write data into file is nothing but file Handling.
+ALl file Handling related classes are available in IO Package.
+
+File Handling related Clasess:
+
+1)File
+2)FileReader
+3)BufferedReader
+4)FileWritter
+5)BufferedWritter.
+
+
+Example :
+
+
+package fileOperations;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDemo {
+
+	public static void main(String[] args) throws IOException {
+
+		File f = new File("C:\\Users\\HP\\OneDrive\\Desktop\\FileHanling\\Demo.txt");
+
+		boolean createNewFile = f.createNewFile();
+
+		if (createNewFile) {
+			System.out.println("File Created Successfully");
+		} else {
+			System.out.println("File already Exists");
+		}
+
+		System.out.println(f.exists());
+		System.out.println(f.getAbsolutePath());
+		System.out.println(f.canWrite());
+		System.out.println(f.canRead());
+		System.out.println(f.length());
+		System.out.println(f.delete());
+		
+		
+		
+		
+		
+	}
+}
