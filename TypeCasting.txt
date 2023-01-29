@@ -1,0 +1,199 @@
+TypeCasting: Converting one data Type into another data Type is is called as Typecasting.
+
+1)Implicit TypeCasting
+2)Explicit TypeCasting
+
+
+1)Implicit TypeCasting: It is automatically done by complier is called as implicit Typecasting.
+
+widening casting(automatically)  => byte -> short ->char -> int -> long-> float ->double
+
+
+Example :
+
+package typecasting;
+
+public class ImplicitTypeCasting {
+
+	
+	public static void main(String[] args) {
+		
+		int a=10;
+		System.out.println(a);
+		
+		double d=a;
+		System.out.println(d);
+		
+	}
+}
+
+
+
+Example :
+
+package typecasting;
+
+public class ImplicitTypeCasting extends Object {
+
+	
+	public static void main(String[] args) {
+		
+	
+		String s="Santosh";
+		System.out.println(s);
+		
+		Object o=s;
+		System.out.println(o);
+	}
+}
+
+
+
+
+
+
+
+
+
+2)Explicit TypeCasting: Programmer is responsible to perform Explicit Typecasting.(Manually)
+
+narrowing Casting (Manually): double ->float -> long-> int -> char -> short -> byte. 
+
+Example :
+
+
+
+package typecasting;
+
+public class ExplicitTypeCasting {
+
+	public static void main(String[] args) {
+
+		double d = 1000.00;
+		System.out.println(d);
+
+		int i = (int) d;
+		System.out.println(i);
+
+	}
+}
+
+
+
+Example :
+
+package typecasting;
+
+public class ExplicitTypeCasting {
+
+	public static void main(String[] args) {
+
+		Object o = "Santosh";
+		System.out.println(o);
+
+		String s = (String) o;
+		System.out.println(s);
+	}
+}
+
+
+
+
+#  ClassCast Exception 
+
+Example :
+
+package typecasting;
+
+public class ClassCastException {
+
+	public static void main(String[] args) {
+
+		Object i = Integer.valueOf(30);
+		System.out.println(i);
+		String s = (String) i;
+		System.out.println(s);
+
+	}
+}
+
+
+
+Example :
+
+
+
+
+
+
+package typecasting;
+
+public class Parent {
+
+	
+	String parentName;
+	   Parent(String n1){
+	      parentName = n1;
+	   }
+	   public void display() {
+	      System.out.println(parentName);
+	   }
+	@Override
+	public String toString() {
+		return "Parent [parentName=" + parentName + "]";
+	}
+	}
+
+
+package typecasting;
+
+public class Child extends Parent {
+	String childName;
+	   Child(String n2) {
+	      super(n2);
+	      childName = n2;
+	   }
+	   public void display() {
+	      System.out.println(childName);
+	   }
+	@Override
+	public String toString() {
+		return "Child [childName=" + childName + "]";
+	}
+	}
+
+
+package typecasting;
+
+public class Test {
+
+	
+	public static void main(String args[]) {
+	      Child ct1 = new Child("Jai");
+	      System.out.println(ct1);
+	      Parent pt1 = new Parent("Adithya");
+	      System.out.println(pt1);
+	     
+	      pt1 = ct1;
+	     
+	      pt1.display();
+
+	      Parent pt2 = new Parent("Sai");
+	      System.out.println(pt2);
+	      Child ct2 = (Child)pt2;
+	      System.out.println(ct2);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
